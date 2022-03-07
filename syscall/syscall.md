@@ -1,7 +1,7 @@
 1. 在Makefile里增加 $U/_trace
 2. 执行*make qemu*命令,你将会看到文件*user/trace.c*不能编译。
    (because the user-space stubs for the system call don't exist yet: add a prototype for the system call to user/user.h, a stub to user/usys.pl, and a syscall number to kernel/syscall.h)
-   这是文档中的原句，这里翻译成中文可能会影响到理解。其实这里如果c语言的语法过关的话，也可以从c语言语法的角度去理解。
+   这是文档中的原句。如果c语言的语法过关的话，也可以从c语言语法的角度去理解。
    首先我们看需要编译的文件*user/trace.c*,和报错信息。
    ![](./image/1.png)
    通过报错信息,可以知道是代码编译的时候找不到*trace*这个函数。所以需要我们去定义这个函数。文档要求我们去*user/user.h*定义。ok，我们添加函数的定义。
